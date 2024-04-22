@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: noahgalloazurecloud 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: noahgalloazurecloud
+  template:
+    metadata:
+      labels:
+        app: noahgalloazurecloud 
+    spec:
+      containers:
+        - name: noahgalloazurecloud 
+          image: noahgalloazurepetstorecr.azurecr.io/noahgalloazurecloud
+          ports:
+          - containerPort: 80
